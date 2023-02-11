@@ -151,9 +151,10 @@ namespace EFT.Trainer.Features
 					var bodyPartHealth = ennemyHealthController.GetBodyPartHealth(EBodyPart.Common);
 					var currentPlayerHealth = bodyPartHealth.Current;
 					var maximumPlayerHealth = bodyPartHealth.Maximum;
+					
 
 					var weaponText = ennemyHandController != null && ennemyHandController.Item is Weapon weapon ? weapon.ShortName.Localized() : string.Empty;
-					var infoText = $"{weaponText} {Mathf.Round(currentPlayerHealth * 100 / maximumPlayerHealth)}% [{distance}m]".Trim();
+					var infoText = $"{weaponText} {currentPlayerHealth}/{maximumPlayerHealth}_HP {Mathf.Round(currentPlayerHealth * 100 / maximumPlayerHealth)}% [{distance}m]".Trim();
 
 					Render.DrawString(new Vector2(boxPositionX, boxPositionY - 20f), infoText, color, false);
 				}

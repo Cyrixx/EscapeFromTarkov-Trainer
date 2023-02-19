@@ -240,7 +240,7 @@ namespace Installer
 							ctx.Status($"{status}{eventArgs.BytesReceived / 1024}K");
 						};
 
-						var buffer = await client.DownloadDataTaskAsync(new Uri($"https://github.com/sailro/EscapeFromTarkov-Trainer/archive/refs/heads/{branch}.zip"));
+						var buffer = await client.DownloadDataTaskAsync(new Uri($"https://github.com/Cyrixx/EscapeFromTarkov-Trainer/archive/refs/heads/{branch}.zip"));
 						var stream = new MemoryStream(buffer);
 						result = new ZipArchive(stream, ZipArchiveMode.Read);
 					});
